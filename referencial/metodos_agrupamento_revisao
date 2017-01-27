@@ -1,0 +1,69 @@
+
+- primeiros métodos usam a matriz de distâncias para decidir os grupos a unir
+- ward usa as somas de quadrados para decidir: imagine que n=5, no primeiro passo teremos k=5, depois k= 4, ..., até k=1
+  no primeiro passo, devemos unir as duas observações que resultam na menor SQ (k=4)
+  no segundo passo, devemos unir as duas observações (ou o grupo e uma observação) que resultam na menor SQ (k=3)
+  e assim por diante até k=1
+
+- Everitt (2011) Cluster analysis
+
+4.2.5 Empirical studies of hierarchical agglomerative methods
+
+Estudos empíricos de métodos hierárquicos são de dois tipos principais. Um dos tipos simula grupos de dados de um tipo e avalia as características e recupera os grupos (Milligan (1981) e Hands and Everitt (1987)). O outro é baseado em dados reais de algum assunto e o critério costuma ser a interpretabilidade dos grupos (Hands and Everitt (1987) concluem que o Ward se sai muito bem quando os dados contém grupos com aproximadamente o mesmo número de pontos, mas se sai mal quando dos tamanhos amostrais são diferentes. Nessa situação, o centroide parece retornar resultados mais satisfatórios. Cunningham and Ogilvie (1972) and Blashfield (1976) também concluíram que para grupos de tamanhos iguais, o Ward é bem sucedido, caso contrário, centroide e vizinho mais distante são preferíveis. 
+ Estudos que focam na estabilidade do agrupamento com a presença de outliers ou ruído incluem Hubert (1974), que encontrou que vizinho mais distante é menos sensível a erros observacionais do que o vizinho mais próximo. (Um ponto relacionado é de Hartigan (1975), que afirma que o vizinho mais próximo depende das menores distâncias e elas precisam ser medidas com baixo erro para o vizinho mais próximo ser bem sucedido)
+ Um estudo empírico baseado na abordagem subject-matter é de Duflou and Maenhaut (1990). Eles compararam 7 métodos padrão (those in Table 4.1 and one other) em dados envolvendo concentrações químicas no cérebro. Eles rejeitaram centroide e ligação média por causa das reversões (um tipo de inconsistência na hierarquia) e concluíram que Ward e vizinho mais distante deram resultados mais interpretáveis e distinguiram melhor matéria cinza e branca no cérebro. Outro exemplo é dado por Baxter (1994), que resume a posição em arqueologia, em que estudos empíricos geralmente favorecem Ward e distância média.
+ Mas é preciso levar em conta que os métodos hierárquicos podem dar diferentes resultados nos mesmo dados e estudos empíricos são raramente conclusivos. O que deve ficar claro é que não há um método que deve ser recomendado e que é melhor do que todos os outros, como Gordon (1998) aponta: métodos hierárquicos só são ótimos dentro de um contexto passo a passo. Mas algumas observações gerais podem ser feitas. Vizinho mais próximo, que não possui propriedades matemáticas satisfatórias e é fácil de programar e se aplica a grandes conjuntos de dados, tende a ser menos satisfatório do que outros métodos por causa do efeito chaining (fenômeno em que grupos separados com pontos perturbadores entre eles tendem a ser unidos no mesmo grupo). O método de Ward tende a parecer um bom método, mas impões uma estrutura esférica que pode não existir.
+
+k-médias: 
+
+
+- livro Mooi (2010) A Concise Guide to Market Research, capítulo Cluster analysis (pp. 237-284)
+
+Após selecionar a medida de dissimilaridade é preciso decidir qual método de agrupamento aplicar. Há vários métodos aglomerativos e eles diferem na forma que definem a distância entre um grupo recém-formado a uma observação ou a outros grupos já existentes. Os procedimentos aglomerativos incluem:
+- Vizinho mais próximo: a distância entre dois grupos é a menor distância entre dois elementos dentro dos dois grupos
+- Vizinho mais distante: oposto ao vizinho mais próximo, define a distância entre dois grupos como sendo a maior distância entre quaisquer dois elementos dos dois grupos
+- Ligação média: a distância entre dois grupos é definida como a distância média entre todos os pares de elementos dos dois grupos
+- Centroide: o centro geométrico (centroide) de cada grupo é calculado primeiro. A distância entre os dois grupos é definida como a distância entre os dois centroides.
+
+Another commonly used approach in hierarchical clustering is Ward’s method.
+This approach does not combine the two most similar objects successively. Instead,
+those objects whose merger increases the overall within-cluster variance to the
+smallest possible degree, are combined. If you expect somewhat equally sized
+clusters and the dataset does not include outliers, you should always use Ward’s
+method.
+
+Ressalta que os resultados dos métodos podem ser bem diferentes dependendo do método utilizado.
+- Vizinho mais próximo: como é baseado nas distâncias mínimas, tende a formar um grupo grande com outros grupos contendo poucos elementos. Esse efeito chaining pode ser usado para detectar outliers pois eles só se juntarão a outros grupos em passos bem posteriores. É considerado o algoritmo mais versátil. 
+- Vizinho mais distante: é fortemente afetado por outliers por ser baseado em distâncias máximas. Os grupos obtidos tendem a ser compactos.
+- Ligação média e centroide: tendem a produzir grupos com baixa variância interna e tamanhos similares. Porém, ambos são afetados por outliers, mas não tanto quanto o vizinho mais distante.
+- Ward:  é um método que não combina os dois objetos mais similares sucessivamente. Em vez disso, aqueles objetos cuja fusão diminui a variância interna são combinados. Se é esperado que haja grupos de iguais tamanhos e o conjunto de dados não inclui outliers, usar Ward.
+- k-médias: geralmente é superior aos métodos hierárquicos e é menos afetado por outliers e pela presença de variáveis irrelevantes. Pode ser aplicado a conjuntos de dados bem grandes por ser menos computacionalmente caro. De fato, sugerimos k-médias para tamanhos amostrais maiores do que 500, especialmente para muitas variáveis. Sob um aspecto só estatístico, k-médias deveria ser usado apenas para dados de razão ou intervalares (por usar distância euclidiana). Entretanto, é um método usado também em dados ordinais
+Para o número de grupos deve-se aplicar um método hierárquico para determinar o número de grupos e k-médias depois.
+
+Número de grupos: 
+
+De qualquer maneira, os dados fornecem apenas um guia bem grosseiro sobre quantos grupos escolher, por isso é importante levar em conta considerações práticas. Ocasionalmente, pode-se ter um conhecimento a priori, ou uma teoria na qual se possa basear a escolha. Entretanto, acima de tudo, deve-se garantir que os resultados tenham significado e sejam interpretáveis. Não apenas o número de grupos deve ser pequeno o suficiente para garantir interpretabilidade mas grande o bastante para ser possível haver distinção.
+
+k-médias: Outro tipo de procedimentos de agrupamento inclui métodos de partição. Como os métodos hierárquicos, há vários algoritmos, sendo k-médias um dos mais utilizados. Ele segue um conceito completamente diferente dos métodos descritos anteriormente. Ele não é baseado em medidas de distância, mas usa variação dentro do grupo como medida para formar grupos homogêneos. O que o método busca é segmentar os dados de forma que a variação dentro dos grupos seja minimizada. Dessa forma não é necessário usar uma medida de distância no primeiro passo da análise. O processo inicia atribuindo aleatoriamente as observações a um número de grupos. As observações são depois realocadas em outros grupos para minimizar a variação dentro dos grupos, o que é basicamente a distância (ao quadrado) de cada observação ao centro do grupo associado. Se a realocação de um objeto a um outro grupo diminui a variação dentro do grupo, esse objeto é realocado a esse novo grupo.
+
+Nos métodos hierárquicos, uma observação que foi atribuída a um grupo não pode mais sair dele, mas na k-médias isso pode ser alterado ao longo do processo. Dessa forma, não há uma estrutura hierárquica. Antes de aplicar o método é necessário decidir o número de grupos. O que é muito comum é aplicar um procedimento hierárquico para determinar o número de grupos e usar a k-médias em seguida.
+
+
+- Scheibler (2010) Monte Carlo Tests of the Accuracy of Cluster Analysis Algorithms: A Comparison of Hierarchical and Nonhierarchical Methods
+
+Nove métodos hierárquicos e quatro não hierárquicos foram comparados em relação à habilidade em resolver 200 misturas normais multivariadas.
+Os melhores: Ward, ligação média e o método Lance-Williams
+Detalhe: usaram dados normais multivariados
+
+
+- Blashfield (1976) Mixture model tests of cluster analysis: Accuracy of four agglomerative hierarchical methods
+
+Compararam: vizinho mais próximo, mais distante, distância média e Ward. Mostra as fórmulas e a maneira de aplicar os 4 métodos. As variáveis foram padronizadas e a distância euclidiana foi utilizada. Menciona a estatística Kappa para avaliar a concordância entre a solução obtida e a inerente aos dados. 50 conjuntos de dados foram usados. O método de Ward foi o mais preciso. Mas os métodos se tornam menos precisos à medida que haja mais sobreposição.
+- Vizinho + próximo: efeito chaining, se k é o número de grupos existentes e n é o número de observações, o método geralmente forma um grupo com (n-k+1) elementos e (k-1) grupos com 1 elemento cada. É um método que fornece soluções menos acuradas quando o número de observações é grande. Não é um bom método para classificação, mas é útil para identificar outliers
+- Vizinho + distante: foi o segundo melhor método. 
+- Distância ou ligação média: desempenho pior do que em outros estudos. Talvez porque os outros tinham uma estrutura chaining.
+- Ward: se um pesquisador deseja obter uma classificação e quer usar um dos 4 métodos hierárquicos, esse é o melhor. 
+Se os dados forem ordinais, usar os vizinhos + próximo ou + distante. Esse artigo usou dados intervalares (contínuos) e o Ward foi melhor.
+Everitt (1974) sugere aplicar todos os métodos e usar a classificação mais frequente.
+
+

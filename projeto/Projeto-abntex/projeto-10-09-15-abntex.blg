@@ -1,0 +1,83 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: projeto-10-09-15-abntex.aux
+The style file: abntex2-alf.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: abntex2-options.bib
+Database file #2: refbiblio.bib
+I was expecting a `,' or a `}'---line 175 of file refbiblio.bib
+ :    
+ :    pages = {507-512},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 199 of file refbiblio.bib
+ :    
+ :    pages = {722-725},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 2539 of file refbiblio.bib
+ :   
+ :   publisher={John Wiley and sons}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "abnt-etal-text="
+Warning--I didn't find a database entry for "r2015"
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
++---------------------------------------------------------+
+| Estilo bibliográfico abntex2-alf.bst versão v-1.9.2           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://abntex2.googlecode.com                           |
++---------------------------------------------------------+
+You've used 23 entries,
+            6711 wiz_defined-function locations,
+            1314 strings with 12507 characters,
+and the built_in function-call counts, 16868 in all, are:
+= -- 1360
+> -- 611
+< -- 53
++ -- 305
+- -- 184
+* -- 1197
+:= -- 2240
+add.period$ -- 58
+call.type$ -- 24
+change.case$ -- 212
+chr.to.int$ -- 50
+cite$ -- 18
+duplicate$ -- 819
+empty$ -- 1269
+format.name$ -- 874
+if$ -- 3992
+int.to.chr$ -- 4
+int.to.str$ -- 1
+missing$ -- 393
+newline$ -- 89
+num.names$ -- 90
+pop$ -- 497
+preamble$ -- 1
+purify$ -- 88
+quote$ -- 0
+skip$ -- 1079
+stack$ -- 1
+substring$ -- 561
+swap$ -- 367
+text.length$ -- 18
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 126
+width$ -- 0
+write$ -- 287
+(There were 3 error messages)

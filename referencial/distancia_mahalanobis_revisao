@@ -1,0 +1,18 @@
+
+Mahalanobis: ao levar em conta as covariâncias, dá menor peso às variáveis com variância maior, sendo um tipo de padronização.
+
+- McLashlan (1999) Mahalanobis distance
+
+Very large numbers of measures of similarity between groups have been proposed, and about thirty are known in the literature. But the Mahalanobis has been found to be the most suitable in a majority of applications. It is now known that many standard distance measures such as Kolmogorov's variational distance, the Hellinger distance, Rao's distance etc., are increasing functions of Mahalanobis distance under assumptions of normality and homoscedasticity and in certain other situations.
+
+- Mimmack (2000) Choice of Distance Matrices in Cluster Analysis: Defining Regions
+
+Under certain conditions calculating Mahalanobis distances is equivalent to calculating Euclidean distances from the principal components.
+Euclidean distance assigns equal weight to each variable, thereby according additional weight to the single characteristic that is measured by the correlated variables. In effect, Euclidean distance gives excess weight to correlated variables (Jolliffe 1986).
+If all principal components are retained and the principal component scores are standardized, Euclidean distances calculated from the principal component scores are the same as Mahalanobis distances calculated from the original data.
+If the original data matrix is not of full rank, either because there are more variables than there are observations or because one variable is a linear combination of others, Mahalanobis distance cannot be calculated directly because the covariance matrix is not of full rank (use of pseudoinverse).
+
+
+- livro Mooi (2010) A Concise Guide to Market Research, capítulo Cluster analysis (pp. 237-284)
+
+Mahalanobis distance. In many situations, the latter is desirable as it compensates for collinearity between the clustering variables. However, it is (unfortunately) not menu-accessible in SPSS
