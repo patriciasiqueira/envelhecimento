@@ -5,8 +5,8 @@ library(rgdal) # se der erro ao instalar veja acima
 library(maptools)
 
 
-load("C:/Users/Larissa/Documents/mapa/atlas.rda")
-mgm <-readOGR(dsn="C:/Users/Larissa/Documents/mapa",layer="31mu2500gsr")
+load("/home/patricia/Dropbox/nupis/projetos/2015-larissa/dissertacao/mapas/atlas.rda")
+mgm <-readOGR(dsn="/home/patricia/Dropbox/nupis/projetos/2015-larissa/dissertacao/mapas",layer="31mu2500gsr")
 
 mgm@data = rename(mgm@data, codmun7=GEOCODIG_M)
 
